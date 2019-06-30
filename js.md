@@ -33,7 +33,8 @@
 
   - 安装pm2：
 
-        npm install pm2 -g，不能少g
+        npm install pm2 -g
+  - 不能少g
 
 
 #### js下载文件
