@@ -1,7 +1,9 @@
 ### git命令
   - 更改git远程路径：
+
         git remote set-url origin 新远程仓库路径
   - 查看远程仓库地址：
+
         git remote -v
 
 
@@ -10,6 +12,7 @@
   - 创建文件：vim ~/.git-credentials，
   - 执行命令git config --global credential.helper store，
   - 执行命令git config --list查看是否设置成功，若出现有credential.helper=store则表明已经成功；或者查看~/.gitconfig文件下存在下面的内容就代表成功了：
+
         [credential]
         helper = store
   - pull或push或clone一个项目，第一次输入账号和密码，之后就不用输入了，现在再看~/.git-credentials文件会发现保存有账号和密码，但是他们是明码保存的，这点就不太好。
