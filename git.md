@@ -68,6 +68,13 @@
   - 参考：https://blog.csdn.net/jk110333/article/details/17217337?locationNum=11&fps=1
 
 
+#### git错误：error: RPC failed; curl 56 GnuTLS recv error (-54): Error in the pull function
+  - 可能是git文件过大，导致传输时被断掉链接，可以把安全性检查去掉以及把允许传输的缓冲调大，执行命令
+
+        git config --global http.sslVerify false
+        git config --global http.postBuffer 1048576000
+
+
 
 
 
