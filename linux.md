@@ -163,13 +163,14 @@
 
 
 #### ssh连接服务器被拒绝
-  - ssh连接服务器出现Permission denied (publickey)的提示，解决方法如下：
+  - ssh连接服务器出现Permission denied (publickey)的提示(比如谷歌云就会出现这种状况，因为谷歌云默认禁止了密码登录，需要手动开启)，解决方法如下：
   - 修改服务器：
   - 修改/etc/ssh/sshd-config文件，
   - 将其中的PermitRootLogin no修改为yes，
   - PubkeyAuthentication yes修改为no，
   - AuthorizedKeysFile .ssh/authorized_keys前面加上#屏蔽掉，
   - PasswordAuthentication no修改为yes就可以了。
+  - 重启ssh服务，执行命令：service sshd restart
 
 
 #### nohup不输出日志信息的方法
@@ -180,7 +181,16 @@
 
         nohup ./program >/dev/null 2>&1 &
 
-
+#### ssh用密钥连接服务器
+  - 也就是ssh的无密码登录，通过ssh-key登录
+  - 在自己的电脑上生成SSH密钥和公钥，这步和git的ssh-key配置一样，执行命令：
+  
+        ssh-keygen -t rsa -C "youremail@example.com"
+  - 在当前用户下的文件夹下的.ssh文件夹下就会看到两个文件id_rsa和id_rsa.pub
+  - 将SSH公钥上传到Linux服务器，使用ssh-copy-id命令完成
+  
+        ssh-copy-id username@remote-server
+  - 输入远程用户的密码后，SSH公钥就会自动上传了，SSH公钥就会保存在远程Linux服务器的用户名/.ssh/authorized_keys文件中，上传完成后，SSH登录就不需要再次输入密码了，但是首次使用SSH-Key登录时需要输入一次远程服务器的登录密码，之后   即使使用scp命令来传送文件时也不需要输入密码
 
 
 

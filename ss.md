@@ -57,6 +57,34 @@
   - 可以设置系统变量，添加http_proxy变量，值为127.0.0.1
 
 
+#### windows的v2ray客户端是v2rayN，
+  - 相关链接：https://sobaigu.com/v2ray-windows-v2rayN.html
+
+
+#### mac命令行走代理
+  - 执行命令：
+  
+        vim ~/.zshrc
+  - 按shift+g调到最后一行，添加上代理配置：
+
+        # proxy list
+        alias proxy='export all_proxy=socks5://127.0.0.1:1080'
+        alias unproxy='unset all_proxy'
+    端口号换成自己的，shadowsocks或v2ray的都可以看配置，看本地端口，这里的1080指的的是本地端口
+    (这里有可能没有~/.zshrc这个文件，如果没有就创建这个文件)
+  - 执行命令：
+        source ~/.zshrc
+  - 使zshrc文件的修改生效
+  - 每次打开一个新的命令行窗口时，如果要走代理，先执行命令proxy，之后命令行就会走代理，如果不要走代理了，就执行命令unproxy，后面的命令行就不会再走代理
+    注意：这里是每新开一个命令行窗口时，就要执行一次proxy命令，才会命令行走代理    
+
+
+#### 一键安装代理
+  - 执行命令：
+        bash <(curl -s -L https://git.io/v2ray.sh)
+  - 更多参考：https://github.com/233boy/v2ray/tree/master
+
+
 
 
 
