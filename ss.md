@@ -81,6 +81,7 @@
 
 #### 一键安装代理
   - 执行命令：
+  
         bash <(curl -s -L https://git.io/v2ray.sh)
   - 更多参考：https://github.com/233boy/v2ray/tree/master
 
