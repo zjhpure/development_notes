@@ -58,7 +58,7 @@
 
 
 #### windows的v2ray客户端是v2rayN，
-  - 相关链接：https://sobaigu.com/v2ray-windows-v2rayN.html
+  - 相关链接：https://sobaigu.com/v2ray-windows-v2rayN.html，需要点击检查更新来更新v2ray-core才会生效
 
 
 #### mac命令行走代理
